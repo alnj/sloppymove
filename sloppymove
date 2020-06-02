@@ -49,7 +49,7 @@ did_user_click_on_a_window() {
 }
 
 
-# Secondary functions (functions called in main functions)
+# Secondary functions
 #####################
 
 fetch_slop_output() {
