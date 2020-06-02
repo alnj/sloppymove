@@ -21,11 +21,11 @@ $ mv sloppymove ~/.local/bin/
 
 Bind `sloppymove` to a hotkey or mouse button. For example, to bind it to Super+Middle Click, add this to `~/.config/openbox/rc.xml` inside the ` <context name="Frame">...</context>` tag:
 ```xml
-      <mousebind button="W-Middle" action="Press">
-        <action name="Execute">
-          <command>sloppymove</command>
-        </action>
-      </mousebind>
+<mousebind button="W-Middle" action="Press">
+      <action name="Execute">
+            <command>sloppymove</command>
+      </action>
+</mousebind>
 ```
 Binding sloppymove to a keyboard hotkey is possible using a standalone hotkey daemon such as [sxhkd](https://github.com/baskerville/sxhkd), and even binding it to a mouse shortcut using this [sxhkd patch](https://github.com/periish/patches/tree/master/sxhkd) or [dxhkd](https://github.com/dakyskye/dxhd).
 
