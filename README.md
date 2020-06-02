@@ -10,9 +10,7 @@ After running sloppymouse via hotkey, you can:
 * Click on a window, in which case the currently active window and the targeted window will swap positions.
 * Draw a rectangle, in which case the currently active window will move itself inside it.
 
-The script is designed so that windows will swap to the exact same position even when their decorations are differently sized (for example when swapping an SSD window with a CSD window).
-
-**Animations are generated at the compositor level. Watch for [this Picom issue](https://github.com/yshui/picom/issues/217) to see the current progress on this feature. Current work-in-progress has not yet been made public.**
+**Animations are generated at the compositor level. Watch for [this Picom issue](https://github.com/yshui/picom/issues/217) to see the progress on this feature. Current work-in-progress has not yet been made public.**
 
 
 ## Installing
@@ -39,6 +37,7 @@ Bind `sloppymove` to a hotkey or mouse button. For example, to bind it to Super+
       </action>
 </mousebind>
 ```
+
 Binding sloppymove to a keyboard hotkey is possible using a standalone hotkey daemon such as [sxhkd](https://github.com/baskerville/sxhkd), and even binding it to a mouse shortcut using [this sxhkd patch](https://github.com/periish/patches/tree/master/sxhkd) or [dxhkd](https://github.com/dakyskye/dxhd).
 
 
