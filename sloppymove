@@ -2,13 +2,6 @@
 # Sloppymove
 # Select an area to move a window to or another window to switch positions with
 .
-# Dependencies: xprop, xdotool, xwininfo
-
-# Known issues: 
-# swapping fixed-aspect-ratio windows like mpv is inaccurate.
-# doesn't work if a window's coordinates are negative
-# doesn't work on nautilus on gnome, but does on OB
-
 main() {
     interactively_select_target
 
@@ -143,5 +136,4 @@ root_window=$(xwininfo -root | awk 'NR==2{print $4}')
 root_window_decimal=$(printf "%d\n" "$root_window")
 active_window=$(xprop -root _NET_ACTIVE_WINDOW |awk '{print "0x0"substr($5,3)}')
 
-set -x
 main; exit
