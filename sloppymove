@@ -41,7 +41,7 @@ interactively_select_target() {
 reposition_window() {
     xdotool windowmove "$1" "$2" "$3" \
             windowsize "$1" "$4" "$5"
-    xdotool windowactivate "$1"
+    xdotool windowactivate "$1" # Ensures the window is not hidden by another
 }
 
 did_user_click_on_a_window() {
@@ -64,8 +64,10 @@ fetch_slop_output() {
 
     set -f; set $(slop -n 1 -f "%i %x %y %w %h")
     target_window="$1"
-    target_window_x="$2"; target_window_y="$3";
-    target_window_width="$4"; target_window_height="$5"
+    target_window_x="$2"
+    target_window_y="$3"
+    target_window_width="$4"
+    target_window_height="$5"
 
     if did_user_click_on_a_window; then
         target_frame=$(get_window_parent_id "$target_window")
@@ -112,7 +114,7 @@ fetch_geometry_of_window() {
     window_height="$2"
 
     set $(
-    xdotool getwindowgeometry "$(get_window_parent_id "$queried_window")" |
+        xdotool getwindowgeometry "$(get_window_parent_id "$queried_window")" |
         awk -F"[ x,]" 'BEGIN {RS="%"}{print $5" "$6" "$11" "$12}'
     )
     frame_x="$1"
@@ -134,11 +136,11 @@ fetch_geometry_of_window() {
 get_window_parent_id() {
     parent=$(xwininfo -tree -stats -id "$1" | awk '$1 ~ "Parent" {print $4}')
 
-    if [ "$parent" !=  "$root_window" ]; then
-        echo "$parent"
-
-    else # Fall back to the input value if the parent window is the root window
+    # Fall back to the input value if the parent window is the root window
+    if [ "$parent" =  "$root_window" ]; then
         echo "$1"
+    else
+        echo "$parent"
     fi
 }
 
