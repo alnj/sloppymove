@@ -7,11 +7,17 @@ main() {
 
     if did_user_click_on_a_window; then
         reposition_window "$target_window" \
-            "$active_x" "$active_y" "$active_width" "$active_height"
+            "$active_x" \
+            "$active_y" \
+            "$active_width" \
+            "$active_height"
     fi
 
     reposition_window "$active_window" \
-        "$target_x" "$target_y" "$target_width" "$target_height"
+        "$target_x" \
+        "$target_y" \
+        "$target_width" \
+        "$target_height"
 }
 
 
@@ -20,12 +26,16 @@ main() {
 
 interactively_select_target() {
     fetch_slop_output
-    target_x="$fetched_x"; target_width="$fetched_width"
-    target_y="$fetched_y"; target_height="$fetched_height"
+    target_x="$fetched_x"
+    target_y="$fetched_y"
+    target_width="$fetched_width"
+    target_height="$fetched_height"
 
     fetch_geometry_of_window "$active_window"
-    active_x="$fetched_x"; active_width="$fetched_width"
-    active_y="$fetched_y"; active_height="$fetched_height"
+    active_x="$fetched_x"
+    active_y="$fetched_y"
+    active_width="$fetched_width"
+    active_height="$fetched_height"
 }
 
 reposition_window() {
