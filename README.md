@@ -52,5 +52,5 @@ Binding sloppymove to a keyboard hotkey is possible using a standalone hotkey da
 ## Known issues
 
 * Broken/untested on WMs other than Openbox.
-* Very inaccurate results with windows with forced aspect ratio such as mpv
+* Very inaccurate results with windows with forced aspect ratio such as mpv.
 * If using a terminal with hinted geometry, there will be a slight size difference when swapping it with another window (unless swapping it with another terminal).
