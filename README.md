@@ -14,6 +14,7 @@ The script is designed so that windows will swap to the exact same position even
 
 **Animations are generated at the compositor level. Watch for [this Picom issue](https://github.com/yshui/picom/issues/217) to see the current progress on this feature. Current work-in-progress has not yet been made public.**
 
+
 ## Installing
 
 Download sloppymove and make it executable.
@@ -40,11 +41,13 @@ Bind `sloppymove` to a hotkey or mouse button. For example, to bind it to Super+
 ```
 Binding sloppymove to a keyboard hotkey is possible using a standalone hotkey daemon such as [sxhkd](https://github.com/baskerville/sxhkd), and even binding it to a mouse shortcut using [this sxhkd patch](https://github.com/periish/patches/tree/master/sxhkd) or [dxhkd](https://github.com/dakyskye/dxhd).
 
+
 ## Dependencies
 
 * xprop
 * xdotool
 * xwininfo
+
 
 ## Known issues
 
