@@ -44,7 +44,6 @@ Binding sloppymove to a keyboard hotkey is possible using a standalone hotkey da
 
 ## Dependencies
 
-* xprop
 * xdotool
 * xwininfo
 

@@ -146,6 +146,6 @@ get_window_parent_id() {
 
 root_window=$(xwininfo -root | awk 'NR==2{print $4}')
 root_window_decimal=$(printf "%d\n" "$root_window")
-active_window=$(xprop -root _NET_ACTIVE_WINDOW |awk '{print "0x0"substr($5,3)}')
+active_window=$(xdotool getactivewindow)
 
 main; exit
