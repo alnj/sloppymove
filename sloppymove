@@ -1,7 +1,7 @@
 #!/bin/sh
 # Sloppymove
-# Select an area to move a window to or another window to switch positions with
-.
+# Select an area to move a window to or another window to switch positions with.
+
 main() {
     interactively_select_target
 
